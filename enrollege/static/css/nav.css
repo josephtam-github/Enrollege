@@ -1,0 +1,84 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #FFA500;
+    padding: 20px 10%;
+    height: 20px;
+}
+
+.word-logo {
+    font-weight: 800;
+    font-size: 1.5em;
+}
+footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: #FFA500;
+    padding: 20px 20px;
+    height: 20px;
+    padding: 10px 30%;
+}
+ footer i {
+    font-size: 0.5em;
+    margin-top: 0.7em;
+ }
+
+ nav {
+    display:flex;
+    /* overflow: hidden; */
+} 
+
+nav i {
+    padding: 0 10%;
+}
+
+  /* Dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0px;
+    background-color: #FFA500;
+    font-size: 0.8em;
+    font-weight: 600;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  /* Add a grey background color to dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: #ffedcc;
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown:hover i{
+    visibility: hidden;
+  }
+
+  @media screen and (max-width:600px) {
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        right: 0px;
+        background-color: #FFA500;
+        font-size: 1.5em;
+        font-weight: 600;
+        min-width: 100%;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1; 
+      }
+  }
