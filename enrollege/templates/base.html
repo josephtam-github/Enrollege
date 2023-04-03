@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/nav.css">
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="../static/css/common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script src="scripts/nav.js"></script>
+    <title>Enrollege</title>
+</head>
+<body>
+   <header>
+        <div class="word-logo"><a href="{{ url_for('home_page') }}">Enrollege</a></div>
+        <nav>
+            {% if current_user.is_authenticated %}
+                <i class="fas fa-sign-out-alt"></i>
+                <div class="dropdown">
+                    <i class="fa-solid fa-bars fa-2x"></i>
+                    <div class="dropdown-content">
+                            <a href="{{ url_for('settings_page') }}">Settings</a>
+                            <a href="{{ url_for('profile_page') }}">Profile</a>
+                            <a href="{{ url_for('logout_page') }}">Logout</a>
+                    </div>
+                </div>
+            {% else %}
+                <div class="dropdown">
+                    <i class="fa-solid fa-bars fa-2x"></i>
+                    <div class="dropdown-content">
+                        <a href="{{ url_for('rankings_page') }}">Rankings</a>
+                        <a href="{{ url_for('login_page') }}">Login</a>
+                    </div>
+                </div>
+            {% endif %}
+        </nav>
+
+   </header>
+
+   {% with messages = get_flashed_messages(with_categories=true) %}
+       {% if messages %}
+           {% for category, message in messages %}
+               <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                   <button onclick="onButtonPress()" class="close" data-dismiss="alert" aria-label="Close">
+                       <span aria-hidden="true">&times;</span>
+                   </button>
+                   {{ message }}
+               </div>
+           {% endfor %}
+       {% endif %}
+   {% endwith %}
+
+   {% block content %}
+
+
+   {% endblock %}
+
+   <footer>
+        <a href="https://github.com/josephtam-github/Enrollege">GitHub</a>
+        <i class="fa-solid fa-circle"></i>
+        <a href="https://docs.google.com/document/d/1wir3Bv72-j5d6CriffenvURaie3POUH9RAbO90qyVbE/edit?usp=sharing">Documentation</a>
+        <i class="fa-solid fa-circle"></i>
+        <a href="https://www.alxafrica.com/software-engineering/">ALX</a>
+   </footer>
+</body>
+</html>
