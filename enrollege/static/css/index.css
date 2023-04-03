@@ -13,34 +13,30 @@ nav {
     background-color:#808080;
     color: #FFFFFF;
     text-align: center;
-    
     padding: 25px;
-    box-sizing: border-box;
+    height: auto;
 }
 
 .intro p {
-    font-size: 2.5em;
+    font-size: 4.5vw;
     margin-bottom: 0.5em;
-    
 }
 
 .intro button, .btn-default {
     background-color:#FFA500;
     border-radius: 0.3em;
     padding: 8px;
-    font-size: 0.8em;
     border-style: none;
 }
 
 .intro button a {
-    font-size: 0.7em;
-    font-weight: 600;
+    font-size: 1.5em;
+    font-weight: 900;
     padding-bottom: 10px;
 }
 
 .about {
-    background-color: #D9D9D9;
-    box-shadow: inset 4px 0px 100px 62px rgba(0,0,0,0.1);
+    background-image: linear-gradient(white, #D9D9D9);
     padding: 25px;
     box-sizing: border-box;
     text-align: center;
@@ -52,10 +48,11 @@ nav {
 }
 .about p {
     text-align: justify;
+    font-size: 1em;
 }
 
 .team {
-    background-color: #D9D9D9;
+    background-image: linear-gradient(#D9D9D9, white);
     padding: 25px;
     box-sizing: border-box;
     display: block;
@@ -88,6 +85,8 @@ a {
 .team-members img {
     border-radius: 50%;
     border: 0.3em solid #FFA500;
+    width: 200px;
+    height: 200px;
 }
 
 .team-members div div a i{
