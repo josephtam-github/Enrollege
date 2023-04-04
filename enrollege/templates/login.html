@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+            <section class="login-body">
+                <div>
+                    <h2>Login</h2>
+                    <hr>
+                </div>
+                <div>
+                    <form method="POST" action="">
+                        {{ form.hidden_tag() }}
+                        <div>
+                                {{ form.username.label() }}
+                            <div>
+                                {{ form.username(placeholder='E.g johndoe') }}
+                            </div>
+                        </div>
+                        <div>
+                                {{ form.password.label() }}
+                            <div>
+                                {{ form.password() }}
+                            </div>
+                        </div>
+                        <div>
+                            Don't have an account? <a href="{{ url_for('signup_page') }}"> Signup</a>
+                        </div>
+                        <div>
+                            <div>
+                                {{ form.submit(class='intro btn-default open-sans') }}
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+{% endblock %}
