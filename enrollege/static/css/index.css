@@ -84,7 +84,6 @@ a {
 }
 .team-members img {
     border-radius: 50%;
-    border: 0.3em solid #FFA500;
     width: 200px;
     height: 200px;
 }
@@ -97,7 +96,6 @@ a {
 
 .profile-pic {
     border-radius: 50%;
-    border: 0.1em solid #D9D9D9;
 }
 
 .login-body {
@@ -106,12 +104,10 @@ a {
     height: 300px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background-color: #CCDEFF;
-    border-radius: 5%;
-    background-image: url("../images/img4.jpg");
+    background-color: lightyellow;
     background-blend-mode:hue;
 }
-.login-body div {
+.login-body div:first-child {
     border-radius: 5%;
     text-align: center;
 }
@@ -125,7 +121,7 @@ a {
 }
 
 .login-form {
-    text-align: center;
+    text-align: left;
     margin-top: 20px;
 }
 
@@ -144,7 +140,7 @@ a {
 }
 
 .login-form label{
-    font-size: 0.7em;
+    font-size: 1em;
     padding-right: 20px;
 }
 .login-body div div a {
