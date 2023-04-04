@@ -2,7 +2,7 @@ from enrollege import app
 from enrollege.models import Users
 from flask import render_template
 from flask_login import login_user, logout_user, login_required, current_user
-from enrollege.forms import RegisterForm
+from enrollege.forms import RegisterForm, LoginForm
 
 
 @app.route('/')
@@ -12,17 +12,19 @@ def home_page():
 
 @app.route('/signup')
 def signup_page():
-    return render_template('signup.html')
+    form = RegisterForm()
+    return render_template('signup.html', form=form)
 
 
 @app.route('/login')
 def login_page():
-    return render_template('login.html')
+    form = LoginForm()
+    return render_template('login.html', form=form)
 
 
 @app.route('/logout')
 def logout():
-    return render_template('account.html')
+    return render_template('login.html')
 
 
 @app.route('/profile')
