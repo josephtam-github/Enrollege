@@ -33,4 +33,11 @@ class RegisterForm(FlaskForm):
     email_address = StringField(label='Email Address:', validators=[Email(), DataRequired()])
     password = PasswordField(label='Password:', validators=[Length(min=6), DataRequired()])
     confpassword = PasswordField(label='Confirm Password:', validators=[EqualTo('password'), DataRequired()])
-    submit = SubmitField(label='Submit')
+    submit = SubmitField(label='Sign up')
+
+
+class LoginForm(FlaskForm):
+    username = StringField(label='Username:', validators=[Length(min=2, max=30), DataRequired()])
+    password = PasswordField(label='Password:', validators=[Length(min=6), DataRequired()])
+    submit = SubmitField(label='Sign in')
+
