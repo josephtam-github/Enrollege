@@ -1,6 +1,6 @@
-from enrollege import app
+from enrollege import app, db
 from enrollege.models import Users
-from flask import render_template
+from flask import render_template, redirect, url_for, flash
 from flask_login import login_user, logout_user, login_required, current_user
 from enrollege.forms import RegisterForm, LoginForm
 
@@ -13,6 +13,20 @@ def home_page():
 @app.route('/signup')
 def signup_page():
     form = RegisterForm()
+    if form.validate_on_submit():
+        user_to_create = Users(username=form.username.data,
+                               firstname=form.firstname.data,
+                               lastname=form.lastname.data,
+                               email_address=form.email_address.data,
+                               password=form.password.data)
+        db.session.add(user_to_create)
+        db.session.commit()
+        login_user(user_to_create)
+        flash(f'Welcome to the community {user_to_create.firstname}!', category='success')
+        return redirect(url_for('home_page'))
+    if form.errors != {}:
+        for err_msg in form.errors.values():
+            flash(f'There was an error signing you up: {err_msg}', category='danger')
     return render_template('signup.html', form=form)
 
 
