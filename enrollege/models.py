@@ -69,3 +69,29 @@ class Users(db.Model, UserMixin):
     def delete(self):
         db.session.delete(self)
         db.session.commit()
+
+
+class Profile(db.Model, UserMixin):
+    __tablename__ = "profile"
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), unique=True, nullable=False)
+    sat_score = db.column(db.Integer(), nullable=False)
+    max_tuition = db.column(db.Integer(), nullable=False)
+
+    def __repr__(self):
+        return f'SAT: {self.sat_score}, Max Tuition: {self.max_tuition}'
+
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+
+    def update(self):
+        db.session.commit()
+
+    @classmethod
+    def get_by_id(cls, user_id):
+        return cls.query.get_or_404(user_id)
+
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
