@@ -10,7 +10,7 @@ def home_page():
     return render_template('index.html')
 
 
-@app.route('/signup')
+@app.route('/signup', methods=['GET', 'POST'])
 def signup_page():
     form = RegisterForm()
     if form.validate_on_submit():
@@ -30,7 +30,7 @@ def signup_page():
     return render_template('signup.html', form=form)
 
 
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login_page():
     form = LoginForm()
     if form.validate_on_submit():
