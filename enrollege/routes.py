@@ -47,7 +47,7 @@ def login_page():
 
 
 @app.route('/logout')
-def logout():
+def logout_page():
     return render_template('login.html')
 
 
