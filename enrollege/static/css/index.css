@@ -3,7 +3,7 @@
 
 nav {
     display:flex;
-} 
+}
 
 /*.nav-icons {
     visibility: hidden;
@@ -163,22 +163,58 @@ a {
 .login-body div div :nth-child(1) {
     padding-right: 20px;
 }
-#facebook-login {
-    background-color: blue;
-    color: white;
+
+.alert{
+    position:relative;
+    padding:.75rem 1.25rem;
+    margin-bottom:1rem;
+    border:1px solid transparent;
+    border-radius:.25rem;
+    font-family: "Open Sans";
+    font-size:1rem;
 }
 
-#facebook-login i{
-    background-color: #2200ff;
+.alert-dismissible{
+    padding-right:4rem
 }
 
-#twitter-login {
-    background-color: skyblue;
+.alert-success{
+    color:#155724;
+    background-color:#d4edda;
+    border-color:#c3e6cb;
 }
 
-#google-login {
-    background-color: red;
-    color: white;
+.alert-danger{
+    color:#721c24;
+    background-color:#f8d7da;
+    border-color:#f5c6cb
+}
+
+.alert-info{
+    color:#0c5460;
+    background-color:#d1ecf1;
+    border-color:#bee5eb
+}
+
+.close{
+    float:right;
+    font-size:1.5rem;
+    font-weight:700;
+    line-height:1;
+    color:#000;
+    text-shadow:0 1px 0 #fff;
+    opacity:.5
+}
+
+.fade{
+    transition:opacity .15s linear
+}
+
+@media (prefers-reduced-motion:reduce) {
+    .fade{transition:none}
+}
+.fade:not(.show){
+    opacity:0
 }
 
 .rendered-form {
@@ -213,4 +249,4 @@ a {
     .team-members {
         display: block;
     }
-  } 
+  }
