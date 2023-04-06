@@ -34,17 +34,19 @@ nav {
 
 nav i {
     padding: 0 10%;
+    color: black;
 }
 
 /* Dropdown content (hidden by default) */
 .dropdown-content {
     display: none;
     position: absolute;
+    top: 80px;
     right: 0px;
     background-color: #FFA500;
     font-size: 0.8em;
     font-weight: 600;
-    min-width: 160px;
+    min-width: 200px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
@@ -64,14 +66,6 @@ nav i {
     background-color: #ffedcc;
 }
 
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.dropdown:hover i {
-    visibility: hidden;
-}
 
 @media screen and (max-width: 600px) {
     .dropdown-content {
