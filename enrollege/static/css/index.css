@@ -109,6 +109,11 @@ a {
     background-blend-mode: hue;
 }
 
+hr {
+    border-color: black;
+    margin-bottom: 35px;
+}
+
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
     margin-bottom: .5rem;
     font-weight: 500;
@@ -149,6 +154,11 @@ a {
     height: 50px;
     border-width: 0px 0px 1px 0px;
     border-color: black;
+}
+
+.login-body input[type=text]:focus, input[type=password]:focus {
+    outline: 0;
+    border-color: #FFA500;
 }
 
 .login-body div:first-child {
@@ -195,9 +205,9 @@ a {
     font-family: "Clash Display";
 }
 
-.login-body div div :nth-child(1) {
-    padding-right: 20px;
-}
+/*.login-body div div :nth-child(1) {*/
+/*    padding-right: 20px;*/
+/*}*/
 
 .alert {
     position: relative;
@@ -297,4 +307,131 @@ a {
     .team-members {
         display: block;
     }
+}
+
+
+/*Style for range input*/
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 75%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+    margin-right: 20px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #FFA500;
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #FFA500;
+  cursor: pointer;
+}
+
+/*Style for number input*/
+
+.quantity {
+    position: relative;
+    margin-bottom: 60px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+{
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number]
+{
+  -moz-appearance: textfield;
+}
+
+.quantity input {
+    font-family: "Clash Display";
+    font-size: 1.3rem;
+  width: 50%;
+  height: 42px;
+  line-height: 1.65;
+  float: left;
+  display: block;
+  padding: 0;
+  margin: 0;
+  padding-left: 20px;
+  border: 1px solid black;
+}
+
+.quantity input:focus {
+  outline: 0;
+    border-color: #FFA500;
+}
+
+.quantity-nav {
+  float: left;
+  position: relative;
+  height: 42px;
+}
+
+.quantity-button {
+    font-family: "Clash Display";
+  position: relative;
+  cursor: pointer;
+  border-left: 1px solid black;
+  width: 20px;
+  text-align: center;
+  color: black;
+  font-size: 1rem;
+  font-family: "Trebuchet MS", Helvetica, sans-serif !important;
+  line-height: 1.7;
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.quantity-button.quantity-up {
+  position: absolute;
+  height: 50%;
+  top: 0;
+  border-bottom: 1px solid black;
+}
+
+.quantity-button.quantity-down {
+  position: absolute;
+  bottom: -1px;
+  height: 50%;
+}
+
+/*Styling for range value*/
+.range-value {
+    -webkit-appearance: none;
+    border-width: 0px 0px 1px 0px;
+    width: 50%;
+    border-color: black;
+    font-family: "Clash Display";
+    font-size: 1.3rem;
+
+}
+
+.range-value:focus {
+    outline: 0;
+    border-color: #FFA500;
 }
