@@ -2,7 +2,7 @@ from enrollege import app, db
 from enrollege.models import Users
 from flask import render_template, redirect, url_for, flash
 from flask_login import login_user, logout_user, login_required, current_user
-from enrollege.forms import RegisterForm, LoginForm
+from enrollege.forms import RegisterForm, LoginForm, ProfileForm
 
 
 @app.route('/')
@@ -51,9 +51,11 @@ def logout_page():
     return render_template('login.html')
 
 
+@login_required
 @app.route('/profile')
 def profile_page():
-    return render_template('profile.html')
+    form = ProfileForm()
+    return render_template('profile.html', form=form)
 
 
 @app.route('/result')
