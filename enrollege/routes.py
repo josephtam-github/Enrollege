@@ -39,7 +39,7 @@ def login_page():
                 attempted_password=form.password.data
         ):
             login_user(attempted_user)
-            flash(f'Success! You are logged in as: {attempted_user.username}', category='success')
+            flash(f'Login successful! Welcome back {attempted_user.firstname}', category='success')
             return redirect(url_for('home_page'))
         else:
             flash('Username and password do not match! Please try again', category='danger')
@@ -48,8 +48,9 @@ def login_page():
 
 @app.route('/logout')
 def logout_page():
-    return render_template('login.html')
-
+    logout_user()
+    flash('You have been logged out', category='info')
+    return render_template('index.html')
 
 @app.route('/profile', methods=['GET', 'POST'])
 @login_required
