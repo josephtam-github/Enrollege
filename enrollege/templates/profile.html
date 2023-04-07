@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block content %}
+            <section class="login-body layered box">
+                <div>
+                    <h2>Pofile</h2>
+                    <hr>
+                </div>
+                <div>
+                    <form method="POST" action="">
+                        {{ form.hidden_tag() }}
+                        <div>
+                                {{ form.sat_score.label() }}
+                            <div>
+                                {{ form.sat_score() }}
+                            </div>
+                        </div>
+                        <div>
+                                {{ form.tuition.label() }}
+                            <div>
+                                {{ form.tuition() }}
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                {{ form.submit(class='intro btn-default open-sans h5') }}
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+{% endblock %}

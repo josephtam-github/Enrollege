@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Recommendation
+{% endblock %}
+
+{% block content %}
+   <section class="intro">
+        <p>Let's help you decide the <br>best university for <br> you</p>
+
+   </section>
+   <section class="ur-system">
+        <h1>Uder Graduate Recommendation System</h1>
+        <div>
+            <h3>Under Graduate Universities</h3>
+            <p>Please input your demographic information, 
+                Maximum Budget for Tution and the Grades you intend entering into the University 
+                with to enable us make recommendations for you</p>
+            
+                <form class="rendered-form">
+                    <label for="location" class="formbuilder-text-label">Location:</label>
+                    <input type="text" class="form-control" name="location" access="false" id="location"><br><br>
+
+                    <label for="gender" class="formbuilder-radio-group-label">Gender:</label>        
+                    <input name="gender" access="false" id="gender-0" value="male" type="radio" checked="checked">
+                    <label for="gender-0">Male</label>
+                    <input name="gender" access="false" id="gender-1" value="female" type="radio" checked="checked">
+                    <label for="gender-1">Female</label><br><br>
+                    <label for="races" class="formbuilder-select-label">Race:</label>
+                    <select class="form-control" name="races" id="races">
+                        <option value="white" id="races-0">White or European</option>
+                        <option value="black" selected="true" id="races-1">Black or African/African American</option>
+                        <option value="indian" id="races-2">American Indian or Alaska Native</option>
+                        <option value="asian" id="races-3">Asian</option>
+                        <option value="hawaiian" id="races-4">Native Hawaiian or Pacific Islander</option>
+                        <option value="american" id="races-5">American</option>
+                    </select><br><br>
+                    <label for="result-type" class="formbuilder-radio-group-label">Result To Use:</label>
+                       
+                    <input name="result-type" access="false" id="result-type-0" value="waec" type="radio">
+                    <label for="result-type-0">WAEC</label>
+                        
+                    <input name="result-type" access="false" id="result-type-1" value="neco" type="radio">
+                    <label for="result-type-1">NECO</label><br><br>
+                       
+                
+                    <label for="courses" class="formbuilder-checkbox-group-label">Courses:</label><br>
+                    
+                    <input name="courses[]" access="false" id="courses-0" value="option-1" type="checkbox">
+                    <label for="courses-0">Agricultural Science</label>
+                        
+                    <input name="courses[]" access="false" id="courses-1" value="option-2" type="checkbox">
+                    <label for="courses-1">Biology</label>
+                        
+                    <input name="courses[]" access="false" id="courses-2" value="option-3" type="checkbox">
+                    <label for="courses-2">Chemistry</label><br>
+                        
+                    <input name="courses[]" access="false" id="courses-3" value="option-4" type="checkbox">
+                    <label for="courses-3">Commerce</label>
+                        
+                    <input name="courses[]" access="false" id="courses-4" value="option-5" type="checkbox">
+                    <label for="courses-4">CRS</label>
+                        
+                    <input name="courses[]" access="false" id="courses-5" value="option-6" type="checkbox">
+                    <label for="courses-5">Economics</label><br>
+                        
+                    <input name="courses[]" access="false" id="courses-6" value="option-7" type="checkbox">
+                    <label for="courses-6">English Language</label>
+                        
+                    <input name="courses[]" access="false" id="courses-7" value="option-8" type="checkbox">
+                    <label for="courses-7">Financial Accounting</label>
+                        
+                    <input name="courses[]" access="false" id="courses-8" value="option-9" type="checkbox">
+                    <label for="courses-8">Geography</label><br>
+                        
+                    <input name="courses[]" access="false" id="courses-9" value="option-10" type="checkbox">
+                    <label for="courses-9">History</label>
+                       
+                    <input name="courses[]" access="false" id="courses-10" value="option-11" type="checkbox">
+                    <label for="courses-10">Literature-in-English</label>
+                        
+                    <input name="courses[]" access="false" id="courses-11" value="option-12" type="checkbox">
+                    <label for="courses-11">Marketing</label><br>
+                        
+                    <input name="courses[]" access="false" id="courses-12" value="option-13" type="checkbox">
+                    <label for="courses-12">Mathematics</label>
+                        
+                    <input name="courses[]" access="false" id="courses-13" value="option-14" type="checkbox">
+                    <label for="courses-13">Physics</label><br><br>
+                    <label for="max-tuition" class="formbuilder-text-label">Maximum Tuition Fee:</label>
+                    <input type="text" class="form-control" name="max-tuition" access="false" id="max-tuition"><br><br>
+                    <button type="button" class="btn-default btn" name="recommendation-submit" access="false" id="recommendation-submit">Submit</button>
+                </form>
+        </div>
+   </section>
+{% endblock %}
