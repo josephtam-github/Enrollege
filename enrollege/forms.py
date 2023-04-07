@@ -43,7 +43,8 @@ class LoginForm(FlaskForm):
 
 
 class ProfileForm(FlaskForm):
-    sat_score = IntegerField(label='Sat Score:', validators=[NumberRange(min=400, max=1600), DataRequired()])
-    tuition = IntegerRangeField(label='Tuition Range:', validators=[NumberRange(min=1, max=1000000), DataRequired()])
+    sat_score = IntegerField(label='Sat Score:',  default=400, validators=[NumberRange(min=400, max=1600), DataRequired()])
+    tuition = IntegerRangeField(label='Tuition Range ($):', validators=[NumberRange(min=1, max=1000000), DataRequired()])
+    tuition_display = IntegerField(default=1000000, validators=[NumberRange(min=1, max=1000000), DataRequired()])
     submit = SubmitField(label='Update Profile')
 
