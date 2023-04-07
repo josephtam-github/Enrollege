@@ -51,7 +51,7 @@ def logout_page():
     return render_template('login.html')
 
 
-@app.route('/profile')
+@app.route('/profile', methods=['GET', 'POST'])
 @login_required
 def profile_page():
     form = ProfileForm()
