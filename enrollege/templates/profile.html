@@ -7,7 +7,7 @@
 {% block content %}
             <section class="login-body layered box">
                 <div>
-                    <h2>Pofile</h2>
+                    <h2>Profile</h2>
                     <hr>
                 </div>
                 <div>
@@ -15,7 +15,7 @@
                         {{ form.hidden_tag() }}
                         <div>
                                 {{ form.sat_score.label() }}
-                            <div>
+                            <div class="quantity">
                                 {{ form.sat_score() }}
                             </div>
                         </div>
@@ -23,6 +23,7 @@
                                 {{ form.tuition.label() }}
                             <div>
                                 {{ form.tuition() }}
+                                {{ form.tuition_display(class="range-value", id="tuition_value") }}
                             </div>
                         </div>
                         <div>
