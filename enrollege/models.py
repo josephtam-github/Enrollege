@@ -73,13 +73,52 @@ class Users(db.Model, UserMixin):
 
 class Profile(db.Model, UserMixin):
     __tablename__ = "profile"
-    id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), unique=True, nullable=False)
+    id = db.Column(db.Integer(), primary_key=True)
+    user_id = db.Column(db.Integer(), db.ForeignKey("users.id"), unique=True, nullable=False)
     sat_score = db.column(db.Integer(), nullable=False)
     max_tuition = db.column(db.Integer(), nullable=False)
 
     def __repr__(self):
         return f'SAT: {self.sat_score}, Max Tuition: {self.max_tuition}'
+
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+
+    def update(self):
+        db.session.commit()
+
+    @classmethod
+    def get_by_id(cls, user_id):
+        return cls.query.get_or_404(user_id)
+
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
+
+
+class Result(db.Model, UserMixin):
+    __tablename__ = "result"
+    id = db.Column(db.Integer(), primary_key=True)
+    user_id = db.Column(db.Integer(), db.ForeignKey("users.id"), unique=True, nullable=False)
+    # University name and Acceptance rate for the 5 universities to be recommended
+    u1 = db.Column(db.String(length=100), unique=True, nullable=False)
+    r1 = db.Column(db.Float(), nullable=False)
+    u2 = db.Column(db.String(length=100), unique=True, nullable=False)
+    r2 = db.Column(db.Float(), nullable=False)
+    u3 = db.Column(db.String(length=100), unique=True, nullable=False)
+    r3 = db.Column(db.Float(), nullable=False)
+    u4 = db.Column(db.String(length=100), unique=True, nullable=False)
+    r4 = db.Column(db.Float(), nullable=False)
+    u5 = db.Column(db.String(length=100), unique=True, nullable=False)
+    r5 = db.Column(db.Float(), nullable=False)
+
+    def __repr__(self):
+        return f'#1 University: {self.u1} \t| Acceptance rate: {self.r1}\n' \
+               f'#2 University: {self.u2} \t| Acceptance rate: {self.r2}\n' \
+               f'#3 University: {self.u3} \t| Acceptance rate: {self.r3}\n' \
+               f'#4 University: {self.u4} \t| Acceptance rate: {self.r4}\n' \
+               f'#5 University: {self.u5} \t| Acceptance rate: {self.r5}\n '
 
     def save(self):
         db.session.add(self)
