@@ -22,7 +22,7 @@ bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
 
 login_manager.login_view = 'login_page'
-login_manager.login_message = 'You need to login in order to get recommendations'
+login_manager.login_message = 'You need to login in order to access that page'
 login_manager.login_message_category = 'info'
 
 from enrollege import routes
