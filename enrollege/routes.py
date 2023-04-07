@@ -51,8 +51,8 @@ def logout_page():
     return render_template('login.html')
 
 
-@login_required
 @app.route('/profile')
+@login_required
 def profile_page():
     form = ProfileForm()
     return render_template('profile.html', form=form)
