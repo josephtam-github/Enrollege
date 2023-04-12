@@ -61,3 +61,9 @@ def normalize_data(data):
             result.append((i - norm_min) * 1.0 / (norm_max - norm_min))
 
     return result
+
+
+def get_top_n(score, n: int):
+    top = sorted(score.items(), reverse=True, key=lambda x: x[1])[:n]
+
+    return top
