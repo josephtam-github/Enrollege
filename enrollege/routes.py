@@ -5,6 +5,8 @@ from enrollege import app, db
 from enrollege.forms import RegisterForm, LoginForm, ProfileForm
 from enrollege.models import Users
 
+from .console.console import recommend
+
 
 @app.route('/')
 def home_page():
@@ -58,7 +60,8 @@ def logout_page():
 @login_required
 def profile_page():
     form = ProfileForm()
-    return render_template('profile.html', form=form)
+    result = recommend(form.sat_score.data, form.tuition_display.data)
+    return render_template('profile.html', form=form, result=result)
 
 
 @app.route('/result')
