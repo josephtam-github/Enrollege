@@ -465,3 +465,26 @@ input[type=number]
     font-weight: bold;
     color: #FFA500;
 }
+
+/*STYLE FOR DESKTOP*/
+
+@media only screen and (min-width: 768px) {
+    .login-body {
+        margin: 5% 25% 5% 25%;
+    }
+
+    .team-members {
+        display: flex;
+    }
+
+    .styled-table {
+        margin: 25px auto;
+        width: 50%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .fade {
+        transition: none
+    }
+}
