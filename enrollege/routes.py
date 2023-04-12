@@ -7,6 +7,8 @@ from enrollege.models import Users
 
 from .console.console import recommend
 
+from http import HTTPStatus
+
 
 @app.route('/')
 def home_page():
@@ -57,11 +59,19 @@ def logout_page():
 
 
 @app.route('/profile', methods=['GET', 'POST'])
-@login_required
+# @login_required
 def profile_page():
     form = ProfileForm()
-    result = recommend(form.sat_score.data, form.tuition_display.data)
-    return render_template('profile.html', form=form, result=result)
+    if form.validate_on_submit():
+        result = recommend(form.sat_score.data, form.tuition_display.data)
+        if result:
+            message = HTTPStatus.CREATED
+        else:
+            message = HTTPStatus.NO_CONTENT
+    else:
+        result = []
+        message = ''
+    return render_template('profile.html', form=form, result=result, message=message)
 
 
 @app.route('/result')
