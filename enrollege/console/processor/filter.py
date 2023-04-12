@@ -29,3 +29,10 @@ def filter_ranked_uni(university_data: dict, college_rank: dict):
         result[name] = CollegeInfo(rank, city, state, tuition, sat, accept_rate, male_ratio)
 
     return result
+
+
+def save_ranked_data(final_data):
+    f = open('cleaned_data.tsv', 'w')
+    for (k, v) in final_data.items():
+        f.write(k + '\t' + v.to_string() + '\n')
+    f.close()
