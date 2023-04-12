@@ -1,5 +1,6 @@
-from models.college import CollegeInfo, float_nan
+from ..models.college import CollegeInfo, float_nan
 # Notice I imported as 'models.college' instead of '..models.college' to avoid relative imports
+
 
 def filter_ranked_uni(university_data: dict, college_rank: dict):
     """Filters the universities  from extracted CSV file that are included in list of ranked universities
