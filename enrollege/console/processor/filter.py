@@ -47,3 +47,17 @@ def filter_ranked_result(user_profile, data):
             result[k] = v
 
     return result
+
+
+def normalize_data(data):
+    norm_max = max(data)
+    norm_min = min(data)
+
+    result = []
+    for i in data:
+        if norm_max == norm_min:
+            result.append(1)
+        else:
+            result.append((i - norm_min) * 1.0 / (norm_max - norm_min))
+
+    return result
