@@ -36,3 +36,14 @@ def save_ranked_data(final_data):
     for (k, v) in final_data.items():
         f.write(k + '\t' + v.to_string() + '\n')
     f.close()
+
+
+def filter_ranked_result(user_profile, data):
+    result = {}
+    count = 0
+    for (k, v) in data.items():
+        if user_profile.sat_score >= v.sat and user_profile.max_tuition >= v.tuition:
+            count += 1
+            result[k] = v
+
+    return result
