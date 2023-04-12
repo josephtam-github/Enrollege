@@ -1,11 +1,10 @@
-from processor.scraper import get_uni_ranking, get_ranking_field
-from models.user_profile import UserProfile
-from processor.filter import normalize_data, filter_ranked_uni, filter_ranked_result, get_top_n, save_ranked_data
+from .processor.scraper import get_uni_ranking, get_ranking_field
+from .models.user_profile import UserProfile
+from .processor.filter import normalize_data, filter_ranked_uni, filter_ranked_result, get_top_n, save_ranked_data
 
 
 def recommend(user_sat, user_tuition):
     """Generates a short list of universities based on user's SAT and tuition budget """
-    print("loading Recent University data")
 
     university_data = get_ranking_field('dataset.csv',
                                         ['INSTNM', 'CITY', 'STABBR', 'TUITIONFEE_OUT', 'SAT_AVG_ALL',
@@ -47,5 +46,3 @@ def recommend(user_sat, user_tuition):
 
         result = recommendation
         return result
-
-    return result
