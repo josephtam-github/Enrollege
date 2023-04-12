@@ -1,3 +1,15 @@
+import numpy as np
+
+
+def float_nan(arg):
+    """Converts non-integer values into float points"""
+    if arg == 'NULL':
+        arg.replace('NULL', float(0))
+    else:
+        np.nan_to_num(arg)
+        return float(arg)
+
+
 class CollegeInfo:
     rank = 0
     city = ''
