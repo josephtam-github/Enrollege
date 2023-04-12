@@ -34,4 +34,34 @@
                     </form>
                 </div>
             </section>
+            {% if result %}
+                <section href="#result">
+                    <table class="login-body layered box styled-table">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>University</th>
+                                <th>Acceptance Rate</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for university in result %}
+                            <tr>
+                                <td>{{ loop.index }}</td>
+                                <td>{{ university[0] }}</td>
+                                <td>{{ university[1]|round(2, 'common') }}%</td>
+                            </tr>
+                        {% endfor %}
+                        <tbody>
+                    </table>
+                </section>
+            {% endif %}
+            {% if message == 204 %}
+                <section href="#result" class="layered box login-body">
+                    <div>
+                        <i class="fa-solid fa-face-sad-tear fa-3x fa-fade" style="color: #FFA500;"></i>
+                    </div>
+                    <h3> Sorry there are no recommendations for your preference, please try again</h3>
+                </section>
+            {% endif %}
 {% endblock %}
