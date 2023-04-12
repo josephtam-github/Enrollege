@@ -73,7 +73,7 @@ a {
 }
 
 .team-members {
-    display: flex;
+    display: block;
     justify-content: space-around;
 }
 
@@ -103,12 +103,14 @@ a {
 }
 
 .login-body {
-    margin: 5% 20% 5% 20%;
+    margin: 5% 5% 5% 5%;
     padding: 30px;
     height: auto;
     background-color: white;
     background-blend-mode: hue;
 }
+
+
 
 hr {
     border-color: black;
@@ -213,7 +215,6 @@ hr {
 .alert {
     position: relative;
     padding: .75rem 1.25rem;
-    margin-bottom: 1rem;
     border: 1px solid transparent;
     border-radius: .25rem;
     font-family: "Open Sans";
@@ -254,12 +255,6 @@ hr {
 
 .fade {
     transition: opacity .15s linear
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .fade {
-        transition: none
-    }
 }
 
 .fade:not(.show) {
@@ -304,15 +299,7 @@ hr {
     font-family: 'Open Sans';
 }
 
-@media screen and (max-width: 600px) {
-    .team-members {
-        display: block;
-    }
-}
-
-
 /*Style for range input*/
-
 input[type="range"] {
   -webkit-appearance: none;
   width: 75%;
@@ -435,4 +422,46 @@ input[type=number]
 .range-value:focus {
     outline: 0;
     border-color: #FFA500;
+}
+
+
+/*Result table style */
+.styled-table:before {
+    overflow: scroll;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px auto;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    width:90%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #FFA500;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #FFA500;
+}
+
+.styled-table tbody tr:active {
+    font-weight: bold;
+    color: #FFA500;
 }
