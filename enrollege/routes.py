@@ -59,7 +59,7 @@ def logout_page():
 
 
 @app.route('/profile', methods=['GET', 'POST'])
-# @login_required
+@login_required
 def profile_page():
     form = ProfileForm()
     if form.validate_on_submit():
