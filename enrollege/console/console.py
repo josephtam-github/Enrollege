@@ -6,8 +6,7 @@ from .processor.filter import normalize_data, filter_ranked_uni, filter_ranked_r
 def recommend(user_sat, user_tuition):
     """Generates a short list of universities based on user's SAT and tuition budget """
 
-    university_data = get_ranking_field(r'C:\Users\HP\Documents\GitHub\Enrollege\Enrollege-main\enrollege\console'
-                                        r'\dataset.csv',
+    university_data = get_ranking_field(r'enrollege/console/dataset.csv',
                                         ['INSTNM', 'CITY', 'STABBR', 'TUITIONFEE_OUT', 'SAT_AVG_ALL',
                                          'ADM_RATE_ALL', 'UGDS_MEN'])
     college_rank = get_uni_ranking()
